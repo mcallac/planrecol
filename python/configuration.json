@@ -1,0 +1,362 @@
+{
+	"tests": [{
+			"id": "Test1",
+			"description":"Les données du plan de récolement doivent être numérisées dans un référentiel projeté. Cette information est primordial, si aucun système de projection n'est défini, il sera impossible de géolocaliser les objets géographiques",
+			"nom": "Contrôle de la projection",
+			"type": "proj",
+			"scr":"RGF93/CC48 (EPSG:3948)"
+		},
+		{
+			"id": "Test2",
+			"description":"Les données doivent être structurées dans des calques ou couches, le cahier des charges définit l'organisation des couches, chaque objet géographique doit donc être ventilé selon son type dans un calque bien défini. L'entreprise doit respecter ces règles",
+			"nom": "Organisation des calques",
+			"type": "requery_layer",
+			"layers": [{
+				"rubrique":"Élément existants",
+				"layers rubrique":[{
+					"calque":"FDP_EXIST",
+					"contenu":"Fond de plan de l’existant avant travaux : topographie, parcellaire, bâti, y compris les textes correspondant et la légende du levé",
+					"obligatoire":"oui"}
+					]},
+				{"rubrique":"Élément nouveaux",
+				"layers rubrique":[{
+					"calque":"EAU_REGARD",
+					"contenu":"citerneau, regard, chambre",
+					"obligatoire":"non"},
+					{
+					"calque":"EAU_ABON",
+					"contenu":"Compteurs abonnés",
+					"obligatoire":"non"},
+					{
+					"calque":"EAU_BRAN",
+					"contenu":"Vannes de branchement",
+					"obligatoire":"oui"},
+					{
+					"calque":"EAU_HYD",
+					"contenu":"Hydrants",
+					"obligatoire":"non"},
+					{
+					"calque":"EAU_PRO",
+					"contenu":"Appareils de protection",
+					"obligatoire":"non"},
+					{
+					"calque":"EAU_RAC",
+					"contenu":"Raccords",
+					"obligatoire":"non"},
+					{
+					"calque":"EAU_REG",
+					"contenu":"Régulateurs",
+					"obligatoire":"non"},
+					{
+					"calque":"EAU_VAN",
+					"contenu":"Vannes",
+					"obligatoire":"oui"},
+					{
+					"calque":"Annotations",
+					"contenu":"Informations textuelles utiles à la lecture du plan : textes + étiquettes AEP + schéma de détail de l’ouvrage éventuel",
+					"obligatoire":"oui"}
+				]},
+				{"rubrique":"Cotations",
+				"layers rubrique":[{
+					"calque":"COTATION_PT",
+					"contenu":"Point de repère pour la prise de cotation en précisant son type. Ils représentent tous les repères physiques permettant de calculer la cotation",
+					"obligatoire":"oui"},
+					{
+					"calque":"COTATION_MES",
+					"contenu":"Mesure de la cotation en précisant l’unité de longueur",
+					"obligatoire":"oui"}
+				]},
+				{"rubrique":"Compléments",
+					"layers rubrique":[{
+					"calque":"CARTOUCHE",
+					"contenu":"Cartouche du plan",
+					"obligatoire":"oui"},
+					{
+					"calque":"DETAILS",
+					"contenu":"Détail au 1/50 si au moins 2 pièces d’assemblage",
+					"obligatoire":"oui"},
+					{
+					"calque":"DIVERS",
+					"contenu":"Informations diverses éventuelles liées à un ouvrage : armoires électriques, fourreaux, télétransmission, téléphone, alarmes…",
+					"obligatoire":"non"},
+					{
+					"calque":"HS",
+					"contenu":"Tous éléments (et textes) des réseaux pré-existants mis hors service dans le cadre des travaux",
+					"obligatoire":"non"}
+				]}
+			]
+		},
+		{
+			"id": "Test3",
+			"description":"Chaque calque a un modèle spécifique, les champs sont définis en fonction de la thématique du calque, quelques champs sont obligatoires, la syntaxe et le type de données doivent être respectées par l'entreprise",
+			"nom": "Champs obligatoires",
+			"type": "requery_fields",
+			"fields": [{
+				"calque":"EAU_REGARD",
+				"description":"Regards des compteurs d’eau (Citerneau, regard, regard multifonctions, chambre)",
+				"fields layer":[{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"materiau",
+					"description":"Matériau",
+					"type":"texte"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"}
+				]},
+				{
+				"calque":"EAU_ABON",
+				"description":"Compteurs d’abonnés (Compteur particulier, compteur réseau, compteur multiple, compteur combiné)",
+				"fields layer":[{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam",
+					"description":"Diamètre",
+					"type":"entier"},
+					{
+					"field":"materiau",
+					"description":"Matériau",
+					"type":"texte"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"}
+				]},
+				{
+				"calque":"EAU_BRAN",
+				"description":"Vannes de branchement (Vanne 1/4 de tour sous bouche à clef)",
+				"fields layer":[{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam",
+					"description":"Diamètre",
+					"type":"entier"},
+					{
+					"field":"materiau",
+					"description":"Matériau",
+					"type":"texte"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"}
+				]},
+				{
+				"calque":"EAU_HYD",
+				"description":"Hydrants (Borne fontaine, bouche incendie, poteau incendie, puisard incendie)",
+				"fields layer":[{
+					"field":"type",
+					"description":"Type d'hydrant",
+					"type":"texte"},
+					{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam",
+					"description":"Diamètre",
+					"type":"entier"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"}
+				]},
+				{
+				"calque":"EAU_PRO",
+				"description":"Appareils de protection (Boîte à boue, clapet, ventouse)",
+				"fields layer":[{
+					"field":"type",
+					"description":"Type de protection",
+					"type":"texte"},
+					{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam",
+					"description":"Diamètre",
+					"type":"entier"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"},
+					{
+					"field":"ztn",
+					"description":"Coordonnées Ztn GPS en CC48",
+					"type":"double"}
+				]},
+				{
+				"calque":"EAU_RAC",
+				"description":"Raccords (Cône de réduction, coude bride-bride, coude à emboîtement, croix, manchon, plaque pleine, té)",
+				"fields layer":[{
+					"field":"type",
+					"description":"Type de raccord",
+					"type":"texte"},
+					{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam_arri",
+					"description":"Diamètre arrivée",
+					"type":"entier"},
+					{
+					"field":"diam_dep",
+					"description":"Diamètre départ",
+					"type":"entier"},
+					{
+					"field":"ang",
+					"description":"Angle",
+					"type":"entier"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"},
+					{
+					"field":"ztn",
+					"description":"Coordonnées Ztn GPS en CC48",
+					"type":"double"}
+				]},
+				{
+				"calque":"EAU_REG",
+				"description":"Régulateurs(Antibélier, limiteur de débit, réducteur de pression, stabilisateur, vanne électrique)",
+				"fields layer":[{
+					"field":"type",
+					"description":"Type de régulateur",
+					"type":"texte"},
+					{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam",
+					"description":"Diamètre",
+					"type":"entier"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"},
+					{
+					"field":"ztn",
+					"description":"Coordonnées Ztn GPS en CC48",
+					"type":"double"}
+				]},
+				{
+				"calque":"EAU_VAN",
+				"description":"Vannes, purges",
+				"fields layer":[{
+					"field":"type",
+					"description":"Type de régulateur",
+					"type":"texte"},
+					{
+					"field":"fourni",
+					"description":"Fournisseur, marque de la pièce",
+					"type":"texte"},
+					{
+					"field":"diam_nom",
+					"description":"Diamètre nominal",
+					"type":"entier"},
+					{
+					"field":"implant",
+					"description":"Implantation",
+					"type":"texte"},
+					{
+					"field":"x",
+					"description":"Coordonnées X GPS en CC48",
+					"type":"double"},
+					{
+					"field":"y",
+					"description":"Coordonnées Y GPS en CC48",
+					"type":"double"},
+					{
+					"field":"z",
+					"description":"Coordonnées Z GPS en CC48",
+					"type":"double"},
+					{
+					"field":"ztn",
+					"description":"Coordonnées Ztn GPS en CC48",
+					"type":"double"}
+				]}
+				
+			]
+		}
+	]
+}
