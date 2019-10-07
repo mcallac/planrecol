@@ -1,0 +1,376 @@
+stdClass Object
+(
+    [nom] => RueGDeGaullePoint.shp
+    [StructureCalques] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [calques] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Fond de plan de l’existant avant travaux : topographie, parcellaire, bâti, y compris les textes correspondant et la légende du levé
+                                    [calque] => FDP_EXIST
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche obligatoire FDP_EXIST est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_b
+                                )
+
+                        )
+
+                    [__class__] => StructureCalques
+                    [rubrique] => Élément existants
+                )
+
+            [1] => stdClass Object
+                (
+                    [calques] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [nbEltsTot] => 7
+                                    [contenu] => citerneau, regard, chambre
+                                    [calque] => EAU_REGARD
+                                    [champs] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [nom] => materiau
+                                                    [description] => Matériau
+                                                    [commentaire] => 
+                                                    [__class__] => Champs
+                                                    [geomErreurs] => Array
+                                                        (
+                                                        )
+
+                                                    [nbEltsRens] => 7
+                                                    [present] => oui
+                                                )
+
+                                        )
+
+                                    [commentaire] => 
+                                    [__class__] => CalqueRubrique
+                                    [present] => oui
+                                    [result] => ok
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Compteurs abonnés
+                                    [calque] => EAU_ABON
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche facultative EAU_ABON est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_nb
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [nbEltsTot] => 83
+                                    [contenu] => Vannes de branchement
+                                    [calque] => EAU_BRAN
+                                    [champs] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [nom] => materiau
+                                                    [description] => Matériau
+                                                    [commentaire] => 
+                                                    [__class__] => Champs
+                                                    [geomErreurs] => Array
+                                                        (
+                                                        )
+
+                                                    [nbEltsRens] => 83
+                                                    [present] => oui
+                                                )
+
+                                        )
+
+                                    [commentaire] => 
+                                    [__class__] => CalqueRubrique
+                                    [present] => oui
+                                    [result] => ok
+                                )
+
+                            [3] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Hydrants
+                                    [calque] => EAU_HYD
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche facultative EAU_HYD est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_nb
+                                )
+
+                            [4] => stdClass Object
+                                (
+                                    [nbEltsTot] => 2
+                                    [contenu] => Appareils de protection
+                                    [calque] => EAU_PRO
+                                    [champs] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [nom] => type
+                                                    [description] => Type de protection
+                                                    [commentaire] => 
+                                                    [__class__] => Champs
+                                                    [geomErreurs] => Array
+                                                        (
+                                                        )
+
+                                                    [nbEltsRens] => 2
+                                                    [present] => oui
+                                                )
+
+                                        )
+
+                                    [commentaire] => 
+                                    [__class__] => CalqueRubrique
+                                    [present] => oui
+                                    [result] => ok
+                                )
+
+                            [5] => stdClass Object
+                                (
+                                    [nbEltsTot] => 65
+                                    [contenu] => Raccords
+                                    [calque] => EAU_RAC
+                                    [champs] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [nom] => type
+                                                    [description] => Type de raccord
+                                                    [commentaire] => 
+                                                    [__class__] => Champs
+                                                    [geomErreurs] => Array
+                                                        (
+                                                        )
+
+                                                    [nbEltsRens] => 65
+                                                    [present] => oui
+                                                )
+
+                                        )
+
+                                    [commentaire] => 
+                                    [__class__] => CalqueRubrique
+                                    [present] => oui
+                                    [result] => ok
+                                )
+
+                            [6] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Régulateurs
+                                    [calque] => EAU_REG
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche facultative EAU_REG est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_nb
+                                )
+
+                            [7] => stdClass Object
+                                (
+                                    [nbEltsTot] => 28
+                                    [contenu] => Vannes
+                                    [calque] => EAU_VAN
+                                    [champs] => Array
+                                        (
+                                            [0] => stdClass Object
+                                                (
+                                                    [nom] => type
+                                                    [description] => Type de régulateur
+                                                    [commentaire] => 
+                                                    [__class__] => Champs
+                                                    [geomErreurs] => Array
+                                                        (
+                                                        )
+
+                                                    [nbEltsRens] => 28
+                                                    [present] => oui
+                                                )
+
+                                        )
+
+                                    [commentaire] => 
+                                    [__class__] => CalqueRubrique
+                                    [present] => oui
+                                    [result] => ok
+                                )
+
+                            [8] => stdClass Object
+                                (
+                                    [nbEltsTot] => 29
+                                    [contenu] => Informations textuelles utiles à la lecture du plan : textes + étiquettes AEP + schéma de détail de l’ouvrage éventuel
+                                    [calque] => Annotations
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => 
+                                    [__class__] => CalqueRubrique
+                                    [present] => oui
+                                    [result] => ok
+                                )
+
+                        )
+
+                    [__class__] => StructureCalques
+                    [rubrique] => Élément nouveaux
+                )
+
+            [2] => stdClass Object
+                (
+                    [calques] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Point de repère pour la prise de cotation en précisant son type. Ils représentent tous les repères physiques permettant de calculer la cotation
+                                    [calque] => COTATION_PT
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche obligatoire COTATION_PT est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_b
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Mesure de la cotation en précisant l’unité de longueur
+                                    [calque] => COTATION_MES
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche obligatoire COTATION_MES est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_b
+                                )
+
+                        )
+
+                    [__class__] => StructureCalques
+                    [rubrique] => Cotations
+                )
+
+            [3] => stdClass Object
+                (
+                    [calques] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Cartouche du plan
+                                    [calque] => CARTOUCHE
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche obligatoire CARTOUCHE est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_b
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Détail au 1/50 si au moins 2 pièces d’assemblage
+                                    [calque] => DETAILS
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche obligatoire DETAILS est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_b
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Informations diverses éventuelles liées à un ouvrage : armoires électriques, fourreaux, télétransmission, téléphone, alarmes…
+                                    [calque] => DIVERS
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche facultative DIVERS est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_nb
+                                )
+
+                            [3] => stdClass Object
+                                (
+                                    [nbEltsTot] => 0
+                                    [contenu] => Tous éléments (et textes) des réseaux pré-existants mis hors service dans le cadre des travaux
+                                    [calque] => HS
+                                    [champs] => Array
+                                        (
+                                        )
+
+                                    [commentaire] => La couche facultative HS est manquante 
+                                    [__class__] => CalqueRubrique
+                                    [present] => non
+                                    [result] => ko_nb
+                                )
+
+                        )
+
+                    [__class__] => StructureCalques
+                    [rubrique] => Compléments
+                )
+
+        )
+
+    [GeomInvalides] => Array
+        (
+        )
+
+    [__class__] => TestShape
+    [Projection] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [result] => ok_nb
+                    [commentaire] => ghfghfghfgh
+                    [projAttendue] => RGF93/CC48 (EPSG:3948)
+                    [__class__] => Projection
+                    [projUtilise] => 
+                )
+
+        )
+
+)

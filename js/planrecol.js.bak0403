@@ -1,0 +1,41 @@
+var controles;
+var contenuProjAttentue=document.getElementById("proj_dem");
+var contenuProjUtilise=document.getElementById("proj_util");
+var contenuProjCommentaire=document.getElementById("proj_com");
+
+var TitreFeuille = document.getElementById("calque_titre_feuille");
+ajaxGet("http://tome/intranet/testplanrecol/plans/1/rapport.json", function (reponse) {
+// Transforme la réponse en un tableau d'articles
+controles = JSON.parse(reponse);
+
+var titreCtrl = document.createElement("h2");
+titreCtrl.textContent = controles.nom;
+TitreFeuille.appendChild(titreCtrl);
+
+
+
+contenuProjAttentue.innerHTML=controles.Projection[0].projAttendue;
+contenuProjUtilise.innerHTML=controles.Projection[0].projUtilise;
+contenuProjCommentaire.innerHTML=controles.Projection[0].commentaire;
+});
+
+/*-----------------------------------------------------------------------
+----------------------------- Événements --------------------------------
+-----------------------------------------------------------------------*/
+var boutonComProj=document.getElementById("bton_modif_comm_proj");
+boutonComProj.addEventListener("click", modifCommentaireProjection(controles.Projection[0].commentaire))
+
+
+
+
+/*-----------------------------------------------------------------------
+----------------------------- Fonctions --------------------------------
+-----------------------------------------------------------------------*/
+
+function modifCommentaireProjection(pCommentaire) {
+	// Modification du commentaire du test de projection
+	var txtArea=document.createElement("textarea");
+	txtArea.value=pCommentaire;
+	contenuProjCommentaire.innerHTML=txtArea;
+	console.log("modifCommentaireProjection");
+}

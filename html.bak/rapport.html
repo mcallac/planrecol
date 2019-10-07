@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Rapport plan</title>
+	<style type="text/css" media="all">@import "../css/style.css";</style>
+</head>
+
+<body>
+	<div id="calque_titre_feuille">
+		<h1 id="nom_plan">Contrôle du plan de récolement</h1>
+	</div>
+	
+	<div class="titres1" id="calque_titre_test1">
+		<table border="0">
+			<tr>
+				<td><h2>1. Test du contrôle de la projection des données</h2></td>
+				<td><img src="../img/verif_succeed.png" class="image_controle" id="picto_test1"></img></td>
+			</tr>
+		</table>
+	</div>
+	
+	<table id="contenu_test1" class="table_projection">
+	<tr>
+		<td align="left">Projection demandée</td><td  align="left" colspan=2 id="proj_dem"></td>
+	</tr>
+	<tr>
+		<td align="left">Projection utilisée</td><td  align="left" colspan=2 id="proj_util"></td>
+	</tr>
+	<tr>
+		<td align="left">Commentaire sur la projection</td><td  align="left" id="proj_com"></td>
+												<td align="right" class="tablenone"><input class="bouton_image_modif_contenu" type="submit" id="bton_modif_comm_proj" value=" " title="Modifier ou compléter le commentaire"/></td>
+	</tr>
+	
+	</table>
+	<button id="bton_enreg_json">Enregistre les modifications</button>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/planrecol.js"></script>
+</body>
+
+</html>

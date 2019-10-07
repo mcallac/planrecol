@@ -1,0 +1,3 @@
+Les fichiers shape ont été créés par ArcMap. Il faut ensuite les réenregister depuis QGis, en spécifiant un système de projection et le type géométrique
+Tester le fichier dans : http://leaflet.calvinmetcalf.com/
+
