@@ -22,34 +22,20 @@ function main(reponse) {
 	var symboCalques= new Object();
 	//On parcourt les tests pour trouver celui qui contient le paramétrage des calques
 	for (keyGrp in configJson.tests) {
-		if (configJson.tests[keyGrp]=="Test2") {
-			console.log("test2");
+		if (configJson.tests[keyGrp].id=="Test2") {
 			for (keyLayer in configJson.tests[keyGrp].layers) {
-				console.log("test2-1");
 				for (keyRubrique in configJson.tests[keyGrp].layers[keyLayer]["layers rubrique"]) {
+					//console.log(configJson.tests[keyGrp].layers[keyLayer]["layers rubrique"][keyRubrique].icone);
 					/*symboCalques est un tableau associatif dont la clé est le nom du calque et la valeur le chemin de l'icone paramétrée dans le fichier configuration.json*/
-					console.log("test2-2");
-					if (keyRubrique["icone"] != "") {
-						console.log("test2-3");
-						symboCalques[keyRubrique["calque"]]=L.icon({
-										iconUrl: keyRubrique["icone"],
-										iconSize: [21, 12]
-									});
+					if (configJson.tests[keyGrp].layers[keyLayer]["layers rubrique"][keyRubrique].icone != "") {
+						symboCalques[configJson.tests[keyGrp].layers[keyLayer]["layers rubrique"][keyRubrique].calque]=configJson.tests[keyGrp].layers[keyLayer]["layers rubrique"][keyRubrique].icone;
 					}else{
-						symboCalques[keyRubrique["calque"]]=null;
+						symboCalques[configJson.tests[keyGrp].layers[keyLayer]["layers rubrique"][keyRubrique].calque]=null;
 					}
 				}
 			}
 		}
 	}
-	
-	console.log("1");
-	for(var key in symboCalques)
-	{
-		var value = symboCalques[key];
-		console.log(key + " = " + value + '<br>');
-	}
-	console.log("2");
 	
 	var mymap = L.map('map').setView([48.800, -3.28], 13);
 
@@ -71,47 +57,6 @@ function main(reponse) {
 	osmcolor.addTo(mymap);
 
 	//make the map
-	
-	var optionsOk =
-		{
-			onEachFeature: function(feature, layer) {
-				if (feature.properties) {
-					layer.bindPopup(Object.keys(feature.properties).map(function(k) {
-						return k + ": " + feature.properties[k];
-					}).join("<br />"), {
-						maxHeight: 200
-					});
-				}
-			},
-			style: function(feature) {
-				switch(feature.properties.Layer) {
-						case "EAU_BRAN":
-							var co="#ff0000";
-							break;
-						case "EAU_VAN":
-							var co="#0000ff";
-							break;
-						default:
-							var co="#00ff00";
-							break;
-					}
-				return {
-					opacity: 1,
-					fillOpacity: 0.7,
-					radius: 6,
-					color:co
-					}
-				},
-			pointToLayer: function(feature, latlng) {
-				return L.circleMarker(latlng, {
-						opacity: 1,
-						fillOpacity: 0.7,
-						color: "#00ff00"
-					})
-				}
-		};
-	
-	
 	var options = {
 	onEachFeature: function(feature, layer) {
 		if (feature.properties) {
@@ -126,51 +71,29 @@ function main(reponse) {
 		}
 	},
 	style: function(feature) {
-		switch(feature.properties.Layer) {
-				case "EAU_BRAN":
-					var co="#ff0000";
-					break;
-				case "EAU_VAN":
-					var co="#0000ff";
-					break;
-				default:
-					var co="#00ff00";
-					break;
-			}
 		return {
 			opacity: 1,
-			fillOpacity: 0.7,
+			fillOpacity: 0.5,
 			radius: 6,
-			color:co
+			color:"#9e9e9e"
 			}
 		},
 	pointToLayer: function(feature, latlng) {
-		//console.log("symBole=" + symboCalques[feature.properties.Layer]);
 		if (symboCalques[feature.properties.Layer] != null) {
 			return L.marker(latlng,{
-				icon: symboCalques[feature.properties.Layer]
-			})
+				icon: L.icon(
+				{
+					iconUrl: symboCalques[feature.properties.Layer],
+					iconSize: [21, 21]
+				})
+			}).bindTooltip(feature.properties.Layer,{sticky: true}) //Affichage de l'infobulle
 		}else{
 			return L.circleMarker(latlng, {
-				opacity: 1,
-				fillOpacity: 0.7,
-				color: "#0000ff"
+				/*opacity: 0.5,
+				fillOpacity: 0.5,
+				color: "#00ff00"*/
 			})
 		}
-
-		
-		/*
-		return L.circleMarker(latlng, {
-				opacity: 1,
-				fillOpacity: 0.7,
-				color: co
-			})*/
-		
-			
-		/*
-		return L.marker(latlng,{
-			icon: ico
-			})*/
 		}
 	};
 
@@ -184,7 +107,7 @@ function main(reponse) {
 		};
 		
 	var couchePlans={
-		"Point": shpfile
+		"Appareils": shpfile
 		};
 	var lc = L.control.layers(fondPlans,couchePlans).addTo(mymap);
 
@@ -194,6 +117,28 @@ function main(reponse) {
 		console.log("finished loaded shapefile");
 	});
 	
+	
+	//Affichage de la légende
+	var legend = L.control({position: 'bottomright'});
+	legend.onAdd = function (map) {
+		var div = L.DomUtil.create('div', 'info legend');
+
+		// loop through our density intervals and generate a label with a colored square for each interval
+		
+		legend_html="<table bgcolor=f2f2f2>";
+		for(var key in symboCalques)
+		{
+			var value = symboCalques[key];
+			if (value != null){
+				legend_html += "<tr><td align='right'><b>" + key + "</b></td><td> <img src=" + value + " height='25' width='25'> </td></tr>";
+			}
+		}
+		legend_html += "</table>";
+		div.innerHTML +=legend_html;
+		return div;
+	};
+
+legend.addTo(mymap);
 }
 
 

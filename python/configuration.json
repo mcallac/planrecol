@@ -26,43 +26,43 @@
 							"calque": "EAU_REGARD",
 							"contenu": "citerneau, regard, chambre",
 							"obligatoire": "non",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/regard.png"
 						},
 						{
 							"calque": "EAU_ABON",
 							"contenu": "Compteurs abonnés",
 							"obligatoire": "non",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/compteur.png"
 						},
 						{
 							"calque": "EAU_BRAN",
 							"contenu": "Vannes de branchement",
 							"obligatoire": "oui",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/vanne_branchement.png"
 						},
 						{
 							"calque": "EAU_HYD",
 							"contenu": "Hydrants",
 							"obligatoire": "non",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/incendie.png"
 						},
 						{
 							"calque": "EAU_PRO",
 							"contenu": "Appareils de protection",
 							"obligatoire": "non",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/protection.png"
 						},
 						{
 							"calque": "EAU_RAC",
 							"contenu": "Raccords",
 							"obligatoire": "non",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/raccord.png"
 						},
 						{
 							"calque": "EAU_REG",
 							"contenu": "Régulateurs",
 							"obligatoire": "non",
-							"icone": "../img/aep/nontype.png"
+							"icone": "../img/aep/regulateur.png"
 						},
 						{
 							"calque": "EAU_VAN",
